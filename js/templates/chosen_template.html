@@ -1,0 +1,24 @@
+<label><h3>Valgte emner</h3></label>
+<table class="table-striped">
+	<thead>
+
+	</thead>
+	<tbody>
+		<% _.each(course, function(c){ %>
+		<tr>
+		<td><button id="rem" onclick="deselectCourse('<%= c.code  %>')">
+			<img src="img/minus.png" width="16" heght="16" alt="Fjern" />
+		</button></td>
+		<td><a href="#emne/<%= c.code  %>" onclick="openDetails('<%= c.code  %>')">
+			<%= c.code %> - <%= c.name %> </a> <% }); %>
+			</td></tr>
+			</tbody>
+</table>
+			 Timeplan (
+		<a href="javascript:void(0)" onclick="createTimePlan('autumn')">H&oslash;st
+		</a> -
+		<a href="javascript:void(0)" onclick="createTimePlan('spring')">V&aring;r</a>)
+		-
+		<a href="javascript:void(0)" onclick="createEksamensOversikt()">Eksamensoversikt</a>
+
+	

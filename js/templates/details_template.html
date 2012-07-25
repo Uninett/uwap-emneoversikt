@@ -1,0 +1,113 @@
+<a href="#" onclick="updateCourses(null)">Alle emner</label></a>
+-
+<a href="#" onclick="updateCourses('A')">A</a>
+-
+<a href="#" onclick="updateCourses('B')">B</a>
+-
+<a href="#" onclick="updateCourses('C')">C</a>
+-
+<a href="#" onclick="updateCourses('E')">E</a>
+-
+<a href="#" onclick="updateCourses('F')">F</a>
+-
+<a href="#" onclick="updateCourses('G')">G</a>
+-
+<a href="#" onclick="updateCourses('H')">H</a>
+-
+<a href="#" onclick="updateCourses('I')">I</a>
+-
+<a href="#" onclick="updateCourses('J')">J</a>
+-
+<a href="#" onclick="updateCourses('K')">K</a>
+-
+<a href="#" onclick="updateCourses('L')">L</a>
+-
+<a href="#" onclick="updateCourses('M')">M</a>
+-
+<a href="#" onclick="updateCourses('N')">N</a>
+-
+<a href="#" onclick="updateCourses('O')">O</a>
+-
+<a href="#" onclick="updateCourses('P')">P</a>
+-
+<a href="#" onclick="updateCourses('Q')">Q</a>
+-
+<a href="#" onclick="updateCourses('R')">R</a>
+-
+<a href="#" onclick="updateCourses('S')">S</a>
+-
+<a href="#" onclick="updateCourses('T')">T</a>
+-
+<a href="#" onclick="updateCourses('U')">U</a>
+-
+<a href="#" onclick="updateCourses('V')">V</a>
+-
+<a href="#" onclick="updateCourses('W')">W</a>
+-
+<a href="#" onclick="updateCourses('X')">X</a>
+-
+<a href="#" onclick="updateCourses('Y')">Y</a>
+-
+<a href="#" onclick="updateCourses('Z')">Z</a>
+-
+<a href="#" onclick="updateCourses('&AElig;')">&AElig;</a>
+-
+<a href="#" onclick="updateCourses('&Oslash;')">&Oslash;</a>
+-
+<a href="#" onclick="updateCourses('&Aring;')">&Aring;</a>
+<ul class="nav nav-tabs" id="detailTabs">
+	<li><a href="#ntnuemne" data-toggle="tab">Emne ved NTNU</a></li>
+	<li><a href="#OCWx" onclick="checkOCW('<%= englishName %>')" data-toggle="tab">Lignende &aringpne emner</a></li>
+</ul>
+<div class="tab-content">
+	<div id="ntnuemne" class="tab-pane" >
+		<div id="emneDetaljer">
+			<b><h2>
+					<%= code %> - <%= name %>
+					<button id="sel" onclick="selectCourse('<%= code  %>')">
+						<img src="img/plus.png" width="16" heght="16" alt="Velg" />
+					</button>
+				</h2></b> <label><b><%=infoType[2].name %></b></label> <%=
+			infoType[2].text %> <br /><br /> <label><b><%=infoType[5].name
+					%></b></label> <%= infoType[5].text %> <br /><br /> <label><b><%=infoType[4].name
+					%>e</b></label> <%= infoType[4].text %> <br /><br /> <label><b><%=infoType[0].name
+					%></b></label> <%= infoType[0].text %> <br /><br /> <label><b><%=infoType[1].name
+					%></b></label> <%= infoType[1].text %> <br /><br /> <label><b><%=infoType[3].name
+					%></b></label> <%= infoType[3].text %> <br />
+			<div class="emner" id="OCW" style=""></div>
+		</div>
+		<div class="well" id="emneFakta">
+			<h3>Fakta</h3>
+			<label><b>Studiepoeng: </b><%= credit %> </label><br /> <label><b>Studieniv&aring;:
+			</b> <%= studyLevelName %> </label><br /> <label><b>Vurderingsform:
+			</b> <%= gradeRuleText %> </label><br /> <b>Undervisning</b><br /> <label><b>Studieniv&aring;:
+			</b> <%= studyLevelName %> </label><br /> <label><b>H&oslash;stundervisning:
+			</b> <%= taughtInAutumn %> </label><br /> <label><b>V&aring;rundervisning:
+			</b> <%= taughtInSpring %> </label><br /> <% if(obj.educationTerm ==
+			undefined){} else { _.each(educationTerm, function(d) { %> <b>Undervisningstermin:</b>
+			<%= d.startTerm %><br /> <b>Arbeidsfordeling:</b><br /> <i>Selvstudium:
+			</i><%= d.inDepthStudyHours %> <br /> <i>Lab:</i> <%= d.labHours %> <br />
+			<i>Forelesning:</i> <%= d.lectureHours %> <br /> <b>Oppmeldingsfrist:</b>
+			<%= d.registrationDeadline %> <br /> <br /> <% }); }%> <br /> <b>Vurdering:</b><br />
+			<% if(obj.assessment == undefined){} else { _.each(assessment,
+			function(d) { %> <b>Vurderingsform:</b> <%=
+			d.assessmentFormDescription %><br /> <b>Teller:</b> <%=
+			d.gradeWeightingNumerator %>/<%=d.gradeWeightingDenominator %> <br />
+			<i>Dato: </i><%= d.date %> <br /> <i>Tidspunkt:</i> <%=
+			d.appearanceTime %> <br /> <i>Varighet:</i> <%= d.duration %> <br />
+			<b>Avmeldingsfrist:</b> <%= d.deadlineBackOut %> <br /> <br /> <%
+			}); } %> <br /> <% if(obj.educationalRole == undefined){} else {
+			_.each(educationalRole, function(d) { %> <b> <%= d.name %></b><br />
+
+			<b>Navn:</b> <%= d.person.displayName %><br /> <b>Telefonnr:</b><%=
+			d.person.phone %><br /> <b>Mobilnr:</b> <%= d.person.mobilePhone %>
+			<br /> <b>Bes&oslash;ksadresse: </b><%= d.person.officeAddress %> <br />
+			<b>Mailadresse:</b> <%= d.person.email %> <br /> <br /> <% }); } %>
+
+		</div>
+	</div>
+	<div id="OCWx" class="tab-pane"  style="overflow:hidden;">
+<!-- 		<a href="javascript:void(0)" onclick="checkOCW('<%= englishName %>')">Sjekk -->
+<!-- 			etter lignende &aring;pne kurs</a> -->
+	</div>
+</div>

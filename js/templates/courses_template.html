@@ -1,0 +1,18 @@
+<a href="#" onclick="updateCourses(null)">Alle emner</label></a> - <a href="#" onclick="updateCourses('A')">A</a> - <a href="#" onclick="updateCourses('B')">B</a> - <a href="#" onclick="updateCourses('C')">C</a> - <a href="#" onclick="updateCourses('E')">E</a> - <a href="#" onclick="updateCourses('F')">F</a> - <a href="#" onclick="updateCourses('G')">G</a> - <a href="#" onclick="updateCourses('H')">H</a> - <a href="#" onclick="updateCourses('I')">I</a> - <a href="#" onclick="updateCourses('J')">J</a> - <a href="#" onclick="updateCourses('K')">K</a> - <a href="#" onclick="updateCourses('L')">L</a> - <a href="#" onclick="updateCourses('M')">M</a> - <a href="#" onclick="updateCourses('N')">N</a> - <a href="#" onclick="updateCourses('O')">O</a> - <a href="#" onclick="updateCourses('P')">P</a> - <a href="#" onclick="updateCourses('Q')">Q</a> - <a href="#" onclick="updateCourses('R')">R</a> - <a href="#" onclick="updateCourses('S')">S</a> - <a href="#" onclick="updateCourses('T')">T</a> - <a href="#" onclick="updateCourses('U')">U</a> - <a href="#" onclick="updateCourses('V')">V</a> - <a href="#" onclick="updateCourses('W')">W</a> - <a href="#" onclick="updateCourses('X')">X</a> - <a href="#" onclick="updateCourses('Y')">Y</a> - <a href="#" onclick="updateCourses('Z')">Z</a> - <a href="#" onclick="updateCourses('&AElig;')">&AElig;</a> - <a href="#" onclick="updateCourses('&Oslash;')">&Oslash;</a> - <a href="#" onclick="updateCourses('&Aring;')">&Aring;</a>
+		<table class="table-striped">
+		<thead>
+		
+		</thead>
+		<tbody>
+		
+			<% if(shCourse == null) {  _.each(course, function(c){ if(c.name.toLowerCase().indexOf(filterCourses.toLowerCase()) != -1){ %>
+				<tr><td><button id="sel" onclick="selectCourse('<%= c.code  %>')"><img src="img/plus.png" width="16" heght="16" alt="Velg" /></button></td><td> <a href="#emne/<%= c.code  %>"> <%= c.code  %> - <%= c.name  %>
+				</a></td></tr>
+			<% } else{}  });} else{ _.each(course, function(c){  if(c.name.substring(0,1) == shCourse && c.name.toLowerCase().indexOf(filterCourses.toLowerCase()) != -1) { console.log('aaa');%>
+				<tr>
+				<td><button id="sel" onclick="selectCourse('<%= c.code  %>')"><img src="img/plus.png" width="16" heght="16" alt="Velg" /></button></td><td> <a href="#emne/<%= c.code  %>"> <%= c.code  %> - <%= c.name  %>
+				</a></td></tr>
+			<% } else{} } );   } %>
+		
+		</tbody>
+		</table>

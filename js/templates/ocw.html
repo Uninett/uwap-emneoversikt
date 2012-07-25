@@ -1,0 +1,11 @@
+<div id="ocwstuff">
+    	<label><b>Lignende emner fra skoler med &aringpne kurs:</b></label>
+		<ul class="emner">
+			<% _.each(course, function(c){   %>
+				<li> <b><a href="<%= c.CourseURL  %>"> <%= c.Institution  %> - <%= c.Title  %> - <%= c.TeachingDate  %></b><br />
+				</a>
+				<%= c.Description  %><br /><br />
+				</li>
+			<% }); %>
+		</ul>
+</div>

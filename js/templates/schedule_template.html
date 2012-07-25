@@ -1,0 +1,81 @@
+<a href="javascript:void(0)" onclick="updateCourses(null)">Alle emner</label></a> - <a href="javascript:void(0)" onclick="updateCourses('A')">A</a> - <a href="javascript:void(0)" onclick="updateCourses('B')">B</a> - <a href="javascript:void(0)" onclick="updateCourses('C')">C</a> - <a href="javascript:void(0)" onclick="updateCourses('E')">E</a> - <a href="javascript:void(0)" onclick="updateCourses('F')">F</a> - <a href="javascript:void(0)" onclick="updateCourses('G')">G</a> - <a href="javascript:void(0)" onclick="updateCourses('H')">H</a> - <a href="javascript:void(0)" onclick="updateCourses('I')">I</a> - <a href="javascript:void(0)" onclick="updateCourses('J')">J</a> - <a href="javascript:void(0)" onclick="updateCourses('K')">K</a> - <a href="javascript:void(0)" onclick="updateCourses('L')">L</a> - <a href="javascript:void(0)" onclick="updateCourses('M')">M</a> - <a href="javascript:void(0)" onclick="updateCourses('N')">N</a> - <a href="javascript:void(0)" onclick="updateCourses('O')">O</a> - <a href="javascript:void(0)" onclick="updateCourses('P')">P</a> - <a href="javascript:void(0)" onclick="updateCourses('Q')">Q</a> - <a href="javascript:void(0)" onclick="updateCourses('R')">R</a> - <a href="javascript:void(0)" onclick="updateCourses('S')">S</a> - <a href="javascript:void(0)" onclick="updateCourses('T')">T</a> - <a href="javascript:void(0)" onclick="updateCourses('U')">U</a> - <a href="javascript:void(0)" onclick="updateCourses('V')">V</a> - <a href="javascript:void(0)" onclick="updateCourses('W')">W</a> - <a href="javascript:void(0)" onclick="updateCourses('X')">X</a> - <a href="javascript:void(0)" onclick="updateCourses('Y')">Y</a> - <a href="javascript:void(0)" onclick="updateCourses('Z')">Z</a> - <a href="javascript:void(0)" onclick="updateCourses('&AElig;')">&AElig;</a> - <a href="javascript:void(0)" onclick="updateCourses('&Oslash;')">&Oslash;</a> - <a href="javascript:void(0)" onclick="updateCourses('&Aring;')">&Aring;</a>
+
+<ul class="nav nav-tabs" id="scheduleTabs">
+	<li class="active"><a href="#timeplan" data-toggle="tab">Timeplan</a></li>
+	<li><a href="#scheduler"  data-toggle="tab">Kalender</a></li>
+</ul>
+<div class="tab-content">
+	<div id="timeplan" class="tab-pane active" >
+
+
+<b>Mandag</b>
+<br />
+<% 	_.each(monday, function(m){ _.each(m.activitySchedules, function(m2){ %> <i> Uker: <%= m2.weeks %> - <% _.each(m2.rooms, function(m3){ %> Sted: <%= m3.location %>  <%})  %><% _.each(m.staff, function(m3) { %> - Personer: <%= m3.description  %> <%= m3.name %> <%}) %></i><br /> 
+	<b> <%= m2.start%> - <%= m2.end %>:<% });%> <%= m.courseCode %>  <%= m.norwegianCourseName %></b> - <%= m.activityDescription %>   <% if(m.studyProgrammes == undefined){ %><br /><br /><% } else{ %> for <%= m.studyProgrammes %><br /><br /> <%}  
+	
+
+}); %>
+<br />
+
+<b>Tirsdag</b>
+<br />
+<% 	_.each(tuesday, function(m){ _.each(m.activitySchedules, function(m2){ %> <i> Uker: <%= m2.weeks %> - <% _.each(m2.rooms, function(m3){ %> Sted: <%= m3.location %>  <%})  %><% _.each(m.staff, function(m3) { %> - Personer: <%= m3.description  %> <%= m3.name %> <%}) %></i><br /> 
+	<b> <%= m2.start%> - <%= m2.end %>:<% });%> <%= m.courseCode %>  <%= m.norwegianCourseName %></b> - <%= m.activityDescription %>   <% if(m.studyProgrammes == undefined){ %><br /><br /><% } else{ %> for <%= m.studyProgrammes %><br /><br /> <%}  
+	
+
+}); %>
+<br />
+
+
+<b>Onsdag</b>
+<br />
+<% 	_.each(wednesday, function(m){ _.each(m.activitySchedules, function(m2){ %> <i> Uker: <%= m2.weeks %> - <% _.each(m2.rooms, function(m3){ %> Sted: <%= m3.location %>  <%})  %><% _.each(m.staff, function(m3) { %> - Personer: <%= m3.description  %> <%= m3.name %> <%}) %></i><br /> 
+	<b> <%= m2.start%> - <%= m2.end %>:<% });%> <%= m.courseCode %>  <%= m.norwegianCourseName %> </b>- <%= m.activityDescription %>   <% if(m.studyProgrammes == undefined){ %><br /><br /><% } else{ %> for <%= m.studyProgrammes %><br /><br /> <%}  
+	
+
+}); %>
+<br />
+
+
+<b>Torsdag</b>
+<br />
+<% 	_.each(thursday, function(m){ _.each(m.activitySchedules, function(m2){ %> <i> Uker: <%= m2.weeks %> - <% _.each(m2.rooms, function(m3){ %> Sted: <%= m3.location %>  <%})  %><% _.each(m.staff, function(m3) { %> - Personer: <%= m3.description  %> <%= m3.name %> <%}) %></i><br /> 
+	<b> <%= m2.start%> - <%= m2.end %>:<% });%> <%= m.courseCode %>  <%= m.norwegianCourseName %></b> - <%= m.activityDescription %>   <% if(m.studyProgrammes == undefined){ %><br /><br /><% } else{ %> for <%= m.studyProgrammes %><br /><br /> <%}  
+	
+
+}); %>
+<br />
+
+
+<b>Fredag</b>
+<br />
+<% 	_.each(friday, function(m){ _.each(m.activitySchedules, function(m2){ %> <i> Uker: <%= m2.weeks %> - <% _.each(m2.rooms, function(m3){ %> Sted: <%= m3.location %>  <%})  %><% _.each(m.staff, function(m3) { %> - Personer: <%= m3.description  %> <%= m3.name %> <%}) %></i><br /> 
+	<b> <%= m2.start%> - <%= m2.end %>:<% });%> <%= m.courseCode %>  <%= m.norwegianCourseName %> </b>- <%= m.activityDescription %>   <% if(m.studyProgrammes == undefined){ %><br /><br /><% } else{ %> for <%= m.studyProgrammes %><br /><br /> <%}  
+	
+
+}); %>
+<br />
+</div>
+<div id="scheduler" class="tab-pane">
+	
+	Vis bare linje:<input id="progchooser" alt="linje" onchange="linjeValg(this.value);"></input>
+	<div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%; background-color: #bfcbeb;'>
+		<div class="dhx_cal_navline" style="background-color: #FFF">
+			<div class="dhx_cal_prev_button">&nbsp;</div>
+			<div class="dhx_cal_next_button">&nbsp;</div>
+			<div class="dhx_cal_today_button"></div>
+			<div class="dhx_cal_date"></div>
+			<div class="dhx_cal_tab" name="day_tab" style="right:204px;"></div>
+			<div class="dhx_cal_tab" name="week_tab" style="right:140px;"></div>
+			
+			<div class="dhx_cal_tab" name="timeline_tab" style="right:280px;"></div>
+			<div class="dhx_cal_tab" name="month_tab" style="right:76px;"></div>
+		</div>
+		<div class="dhx_cal_header">
+		</div>
+		<div class="dhx_cal_data">
+		</div>		
+	</div>
+
+</div>
+	
