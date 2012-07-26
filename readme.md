@@ -1,3 +1,3 @@
-This is an application for UNINETT WebApp Park that uses the NTNU Emne API (http://www.ime.ntnu.no/api/) to let users browse NTNU Courses and see what the schedule is like with different course-selections. 
+This is an application for UNINETT WebApp Park (UWAP) that uses the NTNU Emne API (http://www.ime.ntnu.no/api/) to let users browse NTNU Courses and see what the schedule is like with different course-selections. The application shows how to use the UWAP API for getting cross-domain data and store personal data for users (selected courses) in UWAP's database.
 
-The application is licensed under the GNU GPL.
+The application is distributed under the GNU GPL.
